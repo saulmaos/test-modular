@@ -5,8 +5,5 @@ import androidx.compose.ui.Modifier
 
 interface HomeApi {
     @Composable
-    fun launchHome(modifier: Modifier)
-
-
-    fun la()
+    fun LaunchHome(modifier: Modifier)
 }

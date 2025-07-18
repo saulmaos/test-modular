@@ -29,7 +29,7 @@ import com.example.feature.home.R
 import com.example.feature.home.models.Terrain
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel = hiltViewModel()) {
+internal fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel = hiltViewModel()) {
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -109,6 +109,8 @@ private fun SuccessStateScreen(terrains: List<Terrain>) {
 private fun ImageCard(terrain: Terrain) {
     Card {
         Column {
+            // it's possible with coil to display different states based on the current state of the load.
+            // IE: a loader when it's loading, an error image when the image couldn't be fetched
             AsyncImage(
                 model = terrain.imageUrl,
                 contentDescription = null,

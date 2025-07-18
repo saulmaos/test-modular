@@ -1,6 +1,5 @@
 package com.example.feature.home.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.feature.home.domain.GetTerrainsUseCase
@@ -20,7 +19,6 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             homeState.value = HomeUIState.Loading
             homeState.value = getTerrainsUseCase()
-            Log.d("HomeViewModel", "${homeState.value}")
         }
     }
 }
